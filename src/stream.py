@@ -62,7 +62,7 @@ def scale_data(X):
     X_scaled = scaler.fit_transform(X)
     return X_scaled
 
-model = load_model('models\lstm_tsla.h5')
+model = load_model('models/lstm_tsla.h5')
 
 # Main title
 st.title("🚀 Tesla Stock Analysis & Prediction")
