@@ -29,10 +29,12 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+@st.cache_data(ttl=3600)
 def get_latest_tesla_data(days=7):
     data = yf.download("TSLA", period=f"{days}d", interval="1d")
     return data[['Open', 'High', 'Low', 'Close', 'Volume']]
 
+@st.cache_data(ttl=3600)
 def get_intraday_data():
     try:
         end_date = datetime.now()
